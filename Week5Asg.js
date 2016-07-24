@@ -17,6 +17,8 @@ app.get('/getpost',function(req,res){
 	var params = {};
 	console.log(req.query);
 	for(var p in req.query){
+		console.log(p);
+		console.log(req.query[p]);
 		params.push({"name" : p , "value" :req.query[p]});
 	}
 	var context = {};
