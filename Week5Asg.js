@@ -7,19 +7,15 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3033);
 
-var session = require('express-session');
-
-app.use(session({secret:'SuperSecretPassword'}));
-
-var bodyParser = require('body-parser');
+/*var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json());*/
 
 
 app.get('/getpost',function(req,res){
 	var params = {};
-	console.log(req);
+	//console.log(req);
 	for(var p in req.query){
 		params.push({"name" : p , "value" :req.query[p]});
 	}
