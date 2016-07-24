@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.get('/',function(req,res){
+app.get('/getpost',function(req,res){
 	var params = {};
 	for(var p in req.query){
 		params.push({"name" : p , "value" :req.query[p]});
@@ -29,7 +29,7 @@ app.get('/',function(req,res){
 	//req.render('getpost', context);
 });
 
-app.post('/' ,function(req,res){
+app.post('/getpost' ,function(req,res){
 	var params = {};
 	for(var p in req.body){
 		params.push({"name" : p , "value" :req.body[p]});
@@ -37,7 +37,7 @@ app.post('/' ,function(req,res){
 	var context = {};
 	context.type = "POST";
 	context.item = params;
-	//req.render('getpost', context);
+	req.render('getpost', context);
 });
 
 
