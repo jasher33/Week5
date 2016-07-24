@@ -16,8 +16,7 @@ app.get('/other-page',function(req,res){
 
 app.get('/math', function(req, res){
 	res.type('text/plain');
-	var ranNum = Math.random();
-	res.send('Your Lucky Random Number is:' + ranNum);
+	res.render('rand', getContext());
 });
 
 app.use(function(req,res){
@@ -36,3 +35,9 @@ app.use(function(err, req, res, next){
 app.listen(app.get('port'), function(){
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
+
+function genContext(){
+  var stuffToDisplay = {};
+  stuffToDisplay.rand = (Math.random()*10);
+  return stuffToDisplay;
+}
