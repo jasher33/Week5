@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/getpost',function(req,res){
 	var params = {};
+	console.log(req.query);
 	for(var p in req.query){
 		params.push({"name" : p , "value" :req.query[p]});
 	}
