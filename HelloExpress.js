@@ -30,7 +30,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/count', function(){
+app.post('/count', function(req, res){
 	var context = {};
 	if(req.body.command === "resetCount"){
 		req.session.count = 0;
