@@ -14,6 +14,12 @@ app.get('/other-page',function(req,res){
   res.send('Welcome to the other page!');
 });
 
+app.get('/math', function(req, res){
+	res.type('text/plain');
+	var ranNum = Math.random();
+	res.send('Your Lucky Random Number is:' ranNum);
+});
+
 app.use(function(req,res){
   res.type('text/plain');
   res.status(404);
