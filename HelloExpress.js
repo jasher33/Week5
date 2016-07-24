@@ -16,7 +16,7 @@ app.get('/other-page',function(req,res){
 });
 
 app.get('/math', function(req, res){
-	res.render('rand', getContext());
+	res.render('math', getContext());
 });
 
 app.use(function(req,res){
