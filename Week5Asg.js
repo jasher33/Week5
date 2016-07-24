@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/',function(req,res){
 	var params = {};
-	for(var p in req.query{
+	for(var p in req.query){
 		params.push({"name" : p , "value" :req.query[p]});
 	}
 	var conetxt = {};
