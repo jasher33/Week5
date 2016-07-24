@@ -26,7 +26,7 @@ app.get('/',function(req,res){
 	context.type = "GET";
 	context.item = params;
 	console.log(context);
-	req.render("getpost", context);
+	req.render('getpost', context);
 });
 
 app.post('/' ,function(req,res){
@@ -37,7 +37,7 @@ app.post('/' ,function(req,res){
 	var context = {};
 	context.type = "POST";
 	context.item = params;
-	req.render("getpost", context);
+	req.render('getpost', context);
 });
 
 
