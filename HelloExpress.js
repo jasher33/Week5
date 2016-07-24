@@ -17,7 +17,7 @@ app.get('/other-page',function(req,res){
 app.get('/math', function(req, res){
 	res.type('text/plain');
 	var ranNum = Math.random();
-	res.send('Your Lucky Random Number is:' ranNum);
+	res.send('Your Lucky Random Number is:' + ranNum);
 });
 
 app.use(function(req,res){
