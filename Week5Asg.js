@@ -22,7 +22,7 @@ app.get('/',function(req,res){
 	for(var p in req.query){
 		params.push({"name" : p , "value" :req.query[p]});
 	}
-	var conetxt = {};
+	var context = {};
 	context.type = "GET";
 	context.item = params;
 	req.render("getpost", context);
@@ -33,7 +33,7 @@ app.post('/' ,function(req,res){
 	for(var p in req.body){
 		params.push({"name" : p , "value" :req.body[p]});
 	}
-	var conetxt = {};
+	var context = {};
 	context.type = "POST";
 	context.item = params;
 	req.render("getpost", context);
