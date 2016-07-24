@@ -35,6 +35,18 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.post("/count", function(){
+	var context = {};
+	if(req.body.command === "resetCount"){
+		req.session.count = 0;
+	}else{
+		context.err = true;
+	}
+	context.count = req.session.count || 0;
+	req.session.count = context.count + 1;
+	res.render('count', context);
+});
+
 app.post('/post-loopback', function(req,res){
   var qParams = [];
   for (var p in req.body){
