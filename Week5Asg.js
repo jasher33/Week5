@@ -25,7 +25,7 @@ app.get('/getpost',function(req,res){
 	var context = {};
 	context.type = "GET";
 	context.item = params;
-	console.log(context);
+	console.log(req.render);
 	req.render('getpost', context);
 });
 
