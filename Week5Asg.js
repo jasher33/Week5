@@ -14,25 +14,25 @@ app.use(bodyParser.json());*/
 
 
 app.get('/getpost',function(req,res){
-	var params = {};
+	var params = [];
 	console.log(req.query);
 	for(var p in req.query){
 		console.log(p);
 		console.log(req.query[p]);
 		params.push({"name" : p , "value" :req.query[p]});
 	}
-	var context = {};
+	var context = [];
 	context.type = "GET";
 	context.item = params;
 	res.render('getpost', context);
 });
 
 app.post('/getpost' ,function(req,res){
-	var params = {};
+	var params = [];
 	for(var p in req.body){
 		params.push({"name" : p , "value" :req.body[p]});
 	}
-	var context = {};
+	var context = [];
 	context.type = "POST";
 	context.item = params;
 	res.render('getpost', context);
